@@ -7,7 +7,7 @@ def gcd(a,b):
     a_prime = a % b
     return gcd(b, a_prime)
 def lcm_naive(a, b):
-    return a*b/gcd(a,b)
+    return (a//gcd(a,b))*b
 
 if __name__ == '__main__':
     input = sys.stdin.read()
