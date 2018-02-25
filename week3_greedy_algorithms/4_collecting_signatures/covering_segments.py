@@ -1,15 +1,19 @@
 # Uses python3
 import sys
+import operator
 from collections import namedtuple
 
 Segment = namedtuple('Segment', 'start end')
 
 def optimal_points(segments):
+    segments.sort(key = operator.itemgetter(1))
     points = []
-    #write your code here
-    for s in segments:
-        points.append(s.start)
-        points.append(s.end)
+    points.append(segments[0].end)
+    i = 1
+    while(i < len(segments)):
+        if segments[i].start > points[-1]:
+            points.append(segments[i].end)
+        i = i + 1
     return points
 
 if __name__ == '__main__':

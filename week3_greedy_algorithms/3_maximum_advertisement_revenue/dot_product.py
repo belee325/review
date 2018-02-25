@@ -3,10 +3,15 @@
 import sys
 
 def max_dot_product(a, b):
-    #write your code here
-    res = 0
-    for i in range(len(a)):
-        res += a[i] * b[i]
+    #grouping problem
+    #safe move would be to always group the max of a with max of b
+    #we can just sort a and b 
+    a.sort()
+    b.sort()
+    c = [x*y for x,y in zip(a,b)]
+    res=0
+    for x in c:
+        res = res + x
     return res
 
 if __name__ == '__main__':
