@@ -7,7 +7,14 @@ def get_majority_element(a, left, right):
     if left + 1 == right:
         return a[left]
     #write your code here
-    return -1
+    A = get_majority_element(a,left, right//2)
+    B = get_majority_element(a,left + right//2,right)
+    if a.count(A)/(right-left) > 0.5:
+        return A
+    elif a.count(B)/(right-left)>0.5:
+        return B
+    else:
+        return -1
 
 if __name__ == '__main__':
     input = sys.stdin.read()
