@@ -9,13 +9,12 @@ def get_majority_element(a, left, right):
     #write your code here
     A = get_majority_element(a,left, right//2)
     B = get_majority_element(a,left + right//2,right)
-    if a.count(A)/(right-left) > 0.5:
+    if a[left:right].count(A)/(right-left) > 0.5 or B<0:
         return A
-    elif a.count(B)/(right-left)>0.5:
+    elif a[left:right].count(B)/(right-left)>0.5 or A<0:
         return B
     else:
         return -1
-
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))

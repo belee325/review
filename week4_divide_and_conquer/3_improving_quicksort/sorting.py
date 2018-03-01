@@ -6,16 +6,18 @@ def partition3(a, l, r):
     x = a[l]
     j = l
     first = l
+    last = r
     for i in range(l + 1, r + 1):
         if a[i] < x:
             a[first], a[i] = a[i], a[first]
-            a[i], a[j+1] = a[j+1], a[i]
-            j += 1
+            i+=1
             first +=1
+        elif a[i] > x:
+            a[last], a[i] = a[i], a[last]
+            last-=1
         elif a[i] == x:
-            a[i], a[j+1] = a[j+1], a[i]
-            j += 1
-    return j
+            i +=1
+    return first
 
 def partition2(a, l, r):
     x = a[l]
