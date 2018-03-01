@@ -10,9 +10,9 @@ def fast_count_segments(starts, ends, points):
         temp.append((y,'r'))
     for p in points:
         temp.append((p,'p'))
-    print(temp)
+    #print(temp)
     temp.sort(key = lambda tup:(tup[0],tup[1]))
-    print(temp)
+    #print(temp)
     counter = 0
     for pt in temp:
         if pt[1]=='l':
