@@ -11,7 +11,10 @@ def binary_search(a, x):
             right = mid -1
         else:
             left = mid+1
-    return -1
+    if x==a[left]:
+        return left
+    else:
+        return -1
 
 def linear_search(a, x):
     for i in range(len(a)):

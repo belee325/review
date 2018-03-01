@@ -14,7 +14,7 @@ def merge(left,right):
         elif left[i]<= right[j]:
             a_prime.append(left[i])
             i+=1
-    print(i, left[i:], j ,right[j:])
+    #print(i, left[i:], j ,right[j:])
     if i >= j:
         for x in right[j:]:
             a_prime.append(x)
@@ -23,20 +23,21 @@ def merge(left,right):
             a_prime.append(x)
     return inv, a_prime
 
-def get_number_of_inversions(a, l, r):
+def get_number_of_inversions(a):
     tot_inv = 0
-    if r - l <= 1:
-        return [a[l]], tot_inv
-    m = (l + r) // 2
-    left, temp = get_number_of_inversions(a, l, m)
+    if len(a) == 1:
+        return [a[0]], tot_inv
+    m = len(a) // 2
+    left, temp = get_number_of_inversions(a[0:m])
     tot_inv += temp
-    right, temp = get_number_of_inversions(a, m, r)
+    right, temp = get_number_of_inversions(a[m:])
     tot_inv += temp
+    print(left,right, tot_inv)
     inv, a_prime = merge(left,right)
-    return a_prime, inv
+    tot_inv+=inv
+    return a_prime, tot_inv
 
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
-    b = n * [0]
-    print(get_number_of_inversions(a, b, 0, len(a)))
+    print(get_number_of_inversions(a))

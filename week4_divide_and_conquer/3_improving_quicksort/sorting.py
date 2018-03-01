@@ -4,10 +4,11 @@ import random
 
 def partition3(a, l, r):
     x = a[l]
-    j = l
     first = l
     last = r
-    for i in range(l + 1, r + 1):
+    i = l+1
+    #print(a)
+    while i <= last:
         if a[i] < x:
             a[first], a[i] = a[i], a[first]
             i+=1
@@ -17,6 +18,8 @@ def partition3(a, l, r):
             last-=1
         elif a[i] == x:
             i +=1
+        #print(a)
+    #print('done')
     return first
 
 def partition2(a, l, r):

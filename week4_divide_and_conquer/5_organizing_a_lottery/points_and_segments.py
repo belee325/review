@@ -42,6 +42,6 @@ if __name__ == '__main__':
     ends   = data[3:2 * n + 2:2]
     points = data[2 * n + 2:]
     #use fast_count_segments
-    cnt = naive_count_segments(starts, ends, points)
+    cnt = fast_count_segments(starts, ends, points)
     for x in cnt:
         print(x, end=' ')

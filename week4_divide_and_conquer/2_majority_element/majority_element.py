@@ -1,24 +1,32 @@
 # Uses python3
 import sys
 
-def get_majority_element(a, left, right):
-    if left == right:
-        return -1
-    if left + 1 == right:
-        return a[left]
+def get_majority_element(a):
+    if len(a) == 1:
+        return a[0]
+    if len(a) == 2:
+        if a[0] == a[1]:
+            return a[0]
+        else:
+            return -1
     #write your code here
-    A = get_majority_element(a,left, right//2)
-    B = get_majority_element(a,left + right//2,right)
-    if a[left:right].count(A)/(right-left) > 0.5 or B<0:
-        return A
-    elif a[left:right].count(B)/(right-left)>0.5 or A<0:
+    A = get_majority_element(a[0:len(a)//2])
+    B = get_majority_element(a[len(a)//2:])
+    #print(A, B)
+    #print(a.count(A)/len(a), a.count(B)/len(a))
+    if a.count(B)/len(a)>0.5:
         return B
+    elif a.count(A)/len(a)>0.5:
+        return A
+    elif A == B:
+        return A
     else:
         return -1
+    
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
-    if get_majority_element(a, 0, n) != -1:
+    if get_majority_element(a) != -1:
         print(1)
     else:
         print(0)
