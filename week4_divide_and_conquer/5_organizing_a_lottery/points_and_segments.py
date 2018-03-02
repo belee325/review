@@ -2,19 +2,13 @@
 import sys
 import math
 
-def fast_count_segments(starts, ends, points):
+def fast_count_segments(labeled,points):
     count = [0] * len(points)
-    temp =[]
-    for x,y in zip(starts,ends):
-        temp.append((x,'l'))
-        temp.append((y,'r'))
-    for p in points:
-        temp.append((p,'p'))
     #print(temp)
-    temp.sort(key = lambda tup:(tup[0],tup[1]))
+    labeled.sort(key = lambda tup:(tup[0],tup[1]))
     #print(temp)
     counter = 0
-    for pt in temp:
+    for pt in labeled:
         if pt[1]=='l':
             counter +=1
         elif pt[1]=='p':
@@ -41,7 +35,13 @@ if __name__ == '__main__':
     starts = data[2:2 * n + 2:2]
     ends   = data[3:2 * n + 2:2]
     points = data[2 * n + 2:]
+    labeled =[]
+    for x,y in zip(starts,ends):
+        labeled.append((x,'l'))
+        labeled.append((y,'r'))
+    for p in points:
+        labeled.append((p,'p'))
     #use fast_count_segments
-    cnt = fast_count_segments(starts, ends, points)
+    cnt = fast_count_segments(labeled, points)
     for x in cnt:
         print(x, end=' ')

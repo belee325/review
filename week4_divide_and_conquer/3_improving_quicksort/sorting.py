@@ -20,7 +20,8 @@ def partition3(a, l, r):
             i +=1
         #print(a)
     #print('done')
-    return first
+    #print(first,last)
+    return (first, last)
 
 def partition2(a, l, r):
     x = a[l]
@@ -39,9 +40,9 @@ def randomized_quick_sort(a, l, r):
     k = random.randint(l, r)
     a[l], a[k] = a[k], a[l]
     #use partition3
-    m = partition3(a, l, r)
-    randomized_quick_sort(a, l, m - 1)
-    randomized_quick_sort(a, m + 1, r)
+    first,last = partition3(a, l, r)
+    randomized_quick_sort(a, l, first - 1)
+    randomized_quick_sort(a, last + 1, r)
 
 
 if __name__ == '__main__':

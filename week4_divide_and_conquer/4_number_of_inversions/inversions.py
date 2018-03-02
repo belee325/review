@@ -2,42 +2,33 @@
 import sys
 
 def merge(left,right):
-    i = 0
-    j = 0
-    inv = 0
+    inv = left[0] + right[0]
+    left_arr = left[1]
+    right_arr = right[1]
     a_prime=[]
-    while(i < len(left) and j < len(right)):
-        if left[i] > right[j]:
-            a_prime.append(right[j])
-            j+=1
-            inv+=1
-        elif left[i]<= right[j]:
-            a_prime.append(left[i])
-            i+=1
-    #print(i, left[i:], j ,right[j:])
-    if i >= j:
-        for x in right[j:]:
-            a_prime.append(x)
-    else:
-        for x in left[i:]:
-            a_prime.append(x)
+    
+    while(len(left_arr) > 0 and len(right_arr) > 0):
+        if left_arr[0] > right_arr[0]:
+            a_prime.append(left_arr[0])
+            inv += len(right_arr)
+            del(left_arr[0])
+        else:
+            a_prime.append(right_arr[0])
+            del(right_arr[0])
+    a_prime = a_prime + left_arr
+    a_prime = a_prime + right_arr
     return inv, a_prime
 
 def get_number_of_inversions(a):
-    tot_inv = 0
     if len(a) == 1:
-        return [a[0]], tot_inv
+        return 0,[a[0]]
     m = len(a) // 2
-    left, temp = get_number_of_inversions(a[0:m])
-    tot_inv += temp
-    right, temp = get_number_of_inversions(a[m:])
-    tot_inv += temp
-    print(left,right, tot_inv)
-    inv, a_prime = merge(left,right)
-    tot_inv+=inv
-    return a_prime, tot_inv
+    left = get_number_of_inversions(a[0:m])
+    right = get_number_of_inversions(a[m:])
+    tot_inv, a_prime = merge(left,right)
+    return tot_inv,a_prime
 
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
-    print(get_number_of_inversions(a))
+    print(get_number_of_inversions(a)[0])
