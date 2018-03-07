@@ -13,10 +13,10 @@ def get_change(m):
                 if num_coins[i - coin] + 1 <= min_coin:
                     min_coin = num_coins[i - coin] + 1
                     use_coin = coin
-                    print(use_coin)
+                    #print(use_coin)
         num_coins.append(min_coin)
         use_coins.append(use_coin)
-        print(num_coins)
+        #print(num_coins)
     return num_coins[m]
 
 

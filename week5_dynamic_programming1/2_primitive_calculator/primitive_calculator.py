@@ -20,7 +20,6 @@ def optimal_sequence(n):
         mins.append(min_ops)
         #print(mins)
     num_seq = mins[n-1]
-    
     while(n > 1):
         curr_n = n-1
         curr_ops = mins[curr_n-1]
