@@ -15,18 +15,29 @@ class Bracket:
         if self.bracket_type == '(' and c == ')':
             return True
         return False
+    
+def process_input(text):
+    opening_brackets_stack = []
+    for i, char in enumerate(text):
+        if char == '(' or char == '[' or char == '{':
+            # Process opening bracket, write your code here
+            opening_brackets_stack.append(Bracket(char,i))
 
+        if char == ')' or char == ']' or char == '}':
+            # Process closing bracket, write your code here
+            if len(opening_brackets_stack) ==0:
+                print(i+1)
+                return
+            last_open = opening_brackets_stack.pop()
+            if (last_open.bracket_type == '(' and char !=')') or (last_open.bracket_type == '[' and char !=']') or (last_open.bracket_type == '{' and char !='}'):
+                print(i+1)
+                return
+    # Printing answer, write your code here
+    if len(opening_brackets_stack) ==0:
+        print("Success")
+    else:
+        print(opening_brackets_stack.pop().position+1)
+    return
 if __name__ == "__main__":
     text = sys.stdin.read()
-
-    opening_brackets_stack = []
-    for i, next in enumerate(text):
-        if next == '(' or next == '[' or next == '{':
-            # Process opening bracket, write your code here
-            pass
-
-        if next == ')' or next == ']' or next == '}':
-            # Process closing bracket, write your code here
-            pass
-
-    # Printing answer, write your code here
+    process_input(text)
