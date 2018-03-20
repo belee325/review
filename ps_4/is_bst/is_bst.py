@@ -25,27 +25,27 @@ def IsBinarySearchTree(tree):
             # has right child
             if tree[curr][2] != -1:
                 hold = tree[curr][2]
-                tree[curr][2]=-1
+                tree[curr][2] = -1
                 curr = hold
                 stack.append(curr)
             else:
-                if len(stack)>0:
-                    curr=stack[-1]
-    #print(res)
-    for i in range(len(res)-1):
-        if res[i]>=res[i+1]:
+                if len(stack) > 0:
+                    curr = stack[-1]
+    # print(res)
+    for i in range(len(res) - 1):
+        if res[i] >= res[i + 1]:
             return False
     return True
 
 
 def main():
     nodes = int(sys.stdin.readline().strip())
-    if nodes == 0 or nodes == 1:
-        print("CORRECT")
-        return
     tree = []
     for i in range(nodes):
         tree.append(list(map(int, sys.stdin.readline().strip().split())))
+    if nodes == 0 or nodes == 1:
+        print("CORRECT")
+        return
     if IsBinarySearchTree(tree):
         print("CORRECT")
     else:
