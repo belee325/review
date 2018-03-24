@@ -24,7 +24,7 @@ def number_of_components(adj, visited):
 
 
 if __name__ == '__main__':
-    input = sys.stdin.readlines()
+    input = sys.stdin.read()
     data = list(map(int, input.split()))
     n, m = data[0:2]
     data = data[2:]
