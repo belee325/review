@@ -23,7 +23,7 @@ def IsBinarySearchTree(tree):
             curr = hold
             stack.append(curr)
         elif tree[curr][1] == -1:
-            #res.append(tree[curr][0])
+            res.append(tree[curr][0])
             stack.pop()
             # has right child
             if tree[curr][2] != -1:
@@ -38,9 +38,9 @@ def IsBinarySearchTree(tree):
                 if len(stack) > 0:
                     curr = stack[-1]
     # print(res)
-    #for i in range(len(res) - 1):
-    #    if res[i] > res[i + 1]:
-    #        return False
+    for i in range(len(res) - 1):
+        if res[i] > res[i + 1]:
+            return False
     return True
 
 
@@ -56,6 +56,4 @@ def main():
         print("CORRECT")
     else:
         print("INCORRECT")
-
-
 threading.Thread(target=main).start()
