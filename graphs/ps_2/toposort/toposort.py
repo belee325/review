@@ -1,17 +1,31 @@
 #Uses python3
 
 import sys
+time = 0
 
-def dfs(adj, used, order, x):
+def dfs(adj, pre, post, x):
     #write your code here
-    pass
+    global time
+    time += 1
+    pre[x] = time
+    for nodes in adj[x]:
+        if pre[nodes]==0:
+            dfs(adj,pre, post,nodes)
+    time +=1
+    post.append((x,time))
+
+
 
 
 def toposort(adj):
-    used = [0] * len(adj)
-    order = []
+    used = [False] * len(adj)
+    pre = [0] * len(adj)
+    post = []
+    for i in range(len(adj)):
+        if pre[i] == 0:
+            dfs(adj,pre, post,i)
     #write your code here
-    return order
+    return sorted(post, key = lambda tup : tup[1], reverse =True)
 
 if __name__ == '__main__':
     input = sys.stdin.read()
@@ -23,6 +37,6 @@ if __name__ == '__main__':
     for (a, b) in edges:
         adj[a - 1].append(b - 1)
     order = toposort(adj)
-    for x in order:
-        print(x + 1, end=' ')
+    for x, _ in order:
+        print(x+1, end=' ')
 
