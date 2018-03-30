@@ -1,12 +1,27 @@
 #Uses python3
 
 import sys
-import queue
-
+import heapq
+import math
 
 def distance(adj, cost, s, t):
     #write your code here
-    return -1
+    q = [(0,s)]
+    dist = [10**10] * len(adj)
+    prev = [None] * len(adj)
+    dist[s] = 0
+    heapq.heapify(q)
+    while len(q) > 0:
+        _,curr_node = heapq.heappop(q)
+        for i,nbrs in enumerate(adj[curr_node]):
+            if dist[nbrs] >= dist[curr_node] + cost[curr_node][i]:
+                dist[nbrs]=dist[curr_node] + cost[curr_node][i]
+                prev[nbrs] = curr_node
+                heapq.heappush(q, (dist[nbrs],nbrs))
+    if dist[t]==10**10:
+        return -1
+    else:
+        return dist[t]
 
 
 if __name__ == '__main__':
