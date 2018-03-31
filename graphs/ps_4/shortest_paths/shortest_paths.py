@@ -1,13 +1,59 @@
-#Uses python3
+# Uses python3
 
 import sys
 import queue
 
-
-def shortet_paths(adj, cost, s, distance, reachable, shortest):
+def bfs(adj, s, visited):
     #write your code here
-    pass
+    queue = []
+    queue.append(s)
+    ret=[]
+    while len(queue)>0:
+        curr = queue.pop(0)
+        for nbrs in adj[curr]:
+            if not visited[nbrs]:
+                visited[nbrs]=True
+                queue.append(nbrs)
+                ret.append(nbrs)
+    return ret
 
+def shortest_paths(adj, cost, s, distance, reachable, shortest):
+    # write your code here
+    distance[s] = 0
+    for i in range(len(adj)):
+        for j, edges in enumerate(adj):
+            for k, nbr in enumerate(edges):
+                if distance[nbr] > distance[j] + cost[j][k]:
+                    distance[nbr] = distance[j] + cost[j][k]
+    curr_distance = distance.copy()
+    negative_nodes = []
+
+    for j, edges in enumerate(adj):
+        for k, nbr in enumerate(edges):
+            if distance[nbr] > distance[j] + cost[j][k] or shortest[j] == 0:
+                shortest[nbr] = 0
+                negative_nodes.append(nbr)
+                for x in adj[nbr]:
+                    negative_nodes.append(x)
+                distance[nbr] = distance[j] + cost[j][k]
+    visited = [False]*len(adj)
+    for node in negative_nodes:
+        if not visited[node]:
+            lst = bfs(adj,node,visited)
+            for negative in lst:
+                shortest[negative] = 0
+
+    for i in range(len(distance)):
+        if distance[i] == float('inf'):
+            #no paths to node i
+            reachable[i]=0
+        elif curr_distance[i] == distance[i]:
+            #no neg cycle, reachable
+            reachable[i] = 1
+        elif curr_distance[i] != distance[i]:
+            #negative cycle
+            reachable[i]=1
+    return
 
 if __name__ == '__main__':
     input = sys.stdin.read()
@@ -23,10 +69,10 @@ if __name__ == '__main__':
         cost[a - 1].append(w)
     s = data[0]
     s -= 1
-    distance = [10**19] * n
+    distance = [float('inf')] * n
     reachable = [0] * n
     shortest = [1] * n
-    shortet_paths(adj, cost, s, distance, reachable, shortest)
+    shortest_paths(adj, cost, s, distance, reachable, shortest)
     for x in range(n):
         if reachable[x] == 0:
             print('*')
@@ -34,4 +80,3 @@ if __name__ == '__main__':
             print('-')
         else:
             print(distance[x])
-
