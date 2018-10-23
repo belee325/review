@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="exception_basics" Database="" Version="10.0.0">
+  <Project Name="basics" Path="basics/basics.project" Active="No"/>
+  <Project Name="custom_exceptions" Path="custom_exceptions/custom_exceptions.project" Active="No"/>
+  <Project Name="catching_order" Path="catching_order/catching_order.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="basics" ConfigName="Debug"/>
+      <Project Name="custom_exceptions" ConfigName="Debug"/>
+      <Project Name="catching_order" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="basics" ConfigName="Release"/>
+      <Project Name="custom_exceptions" ConfigName="Release"/>
+      <Project Name="catching_order" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
