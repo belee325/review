@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="stlthings" Database="" Version="10.0.0">
+  <Project Name="vectors" Path="vectors/vectors.project" Active="No"/>
+  <Project Name="list" Path="list/list.project" Active="No"/>
+  <Project Name="maps" Path="maps/maps.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="vectors" ConfigName="Debug"/>
+      <Project Name="list" ConfigName="Debug"/>
+      <Project Name="maps" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="vectors" ConfigName="Release"/>
+      <Project Name="list" ConfigName="Release"/>
+      <Project Name="maps" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

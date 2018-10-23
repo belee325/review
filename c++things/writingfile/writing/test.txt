@@ -1,0 +1,4 @@
+writing a line to file
+writing a second line to file
+writing a third line to file
+writing a fourth line to file

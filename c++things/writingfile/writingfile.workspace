@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="writingfile" Database="" Version="10.0.0">
+  <Project Name="readwrite" Path="writing/writing.project" Active="No"/>
+  <Project Name="writing_binaries" Path="writing_binaries/writing_binaries.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="readwrite" ConfigName="Debug"/>
+      <Project Name="writing_binaries" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="readwrite" ConfigName="Release"/>
+      <Project Name="writing_binaries" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
