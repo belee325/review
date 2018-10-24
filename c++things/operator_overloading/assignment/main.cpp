@@ -7,6 +7,10 @@ class Test{
 public:
 	int id;
 	char* name;
+	friend std::ostream& operator<<(ostream& os, const Test &t){
+		os << "ID: " << t.id << "Name :" << t.name << endl;
+		return os;
+	}
 	friend void swap(Test& lhs, Test& rhs){
 		cout << "calling swap" << endl;
 		using std::swap;
@@ -80,6 +84,7 @@ int main(int argc, char **argv)
 {
 	Test t{1, "first test"};
 	Test t2{2, "second test"};
+	cout << t << t2 << endl;
 	t.print();
 	t2.print();
 	Test t3 {t2};
