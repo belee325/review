@@ -6,7 +6,7 @@ using namespace std;
 class Person{
 	
 	friend bool operator< (const Person &lhs, const Person &rhs){
-		return (lhs.age < rhs.age);
+		return (lhs.name == rhs.name) ? (lhs.name < rhs.name) : (lhs.age < rhs.age);
 	}
 	
 	friend bool operator==(const Person &lhs, const Person &rhs){
