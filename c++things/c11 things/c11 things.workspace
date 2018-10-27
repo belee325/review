@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="c11 things" Database="" Version="10.0.0">
+  <Project Name="decltypes" Path="decltypes/decltypes.project" Active="No"/>
+  <Project Name="nested_template" Path="nested_template/nested_template.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="decltypes" ConfigName="Debug"/>
+      <Project Name="nested_template" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="decltypes" ConfigName="Release"/>
+      <Project Name="nested_template" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
