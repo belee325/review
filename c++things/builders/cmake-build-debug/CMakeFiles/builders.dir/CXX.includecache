@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/builders/main.cpp
+iostream
+-
+memory
+-
+fstream
+-
+sstream
+-
+vector
+-
+tuple
+-
+

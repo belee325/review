@@ -1,0 +1,3 @@
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/builders/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/builders/cmake-build-debug/CMakeFiles/builders.dir
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/builders/cmake-build-debug/CMakeFiles/edit_cache.dir

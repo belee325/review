@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/design_patterns.dir/main.cpp.o CMakeFiles/design_patterns.dir/open_closed.cpp.o  -o design_patterns.exe -Wl,--out-implib,libdesign_patterns.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/design_patterns/main.cpp
+iostream
+-
+cstdio
+-
+cstring
+-
+fstream
+-
+boost/lexical_cast.hpp
+-
+
