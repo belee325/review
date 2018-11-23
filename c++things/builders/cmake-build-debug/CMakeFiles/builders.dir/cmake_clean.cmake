@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/builders.dir/main.cpp.o"
+  "CMakeFiles/builders.dir/main.cpp.obj"
+  "CMakeFiles/builders.dir/PersonBuilder.cpp.obj"
   "builders.pdb"
   "builders.exe"
+  "builders.exe.manifest"
   "libbuilders.dll.a"
 )
 

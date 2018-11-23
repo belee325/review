@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/builders/main.cpp" "/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/builders/cmake-build-debug/CMakeFiles/builders.dir/main.cpp.o"
+  "C:/Users/belee/Desktop/study/review/c++things/builders/PersonBuilder.cpp" "C:/Users/belee/Desktop/study/review/c++things/builders/cmake-build-debug/CMakeFiles/builders.dir/PersonBuilder.cpp.obj"
+  "C:/Users/belee/Desktop/study/review/c++things/builders/main.cpp" "C:/Users/belee/Desktop/study/review/c++things/builders/cmake-build-debug/CMakeFiles/builders.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
