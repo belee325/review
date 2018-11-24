@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/HotDrinkFactory.h
+drinkFactory.h
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/drinkFactory.h
+map
+-
+memory
+-
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/drink.h
+iostream
+-
+memory
+-
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/drinkFactory.h
+drink.h
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/drink.h
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/main.cpp
+iostream
+-
+vector
+-
+string
+-
+cmath
+-
+HotDrinkFactory.h
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/factory/HotDrinkFactory.h
+
