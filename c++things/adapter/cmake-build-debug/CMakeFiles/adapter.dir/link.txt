@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/adapter.dir/main.cpp.o  -o adapter.exe -Wl,--out-implib,libadapter.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
