@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/composite.dir/main.cpp.o  -o composite.exe -Wl,--out-implib,libcomposite.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
