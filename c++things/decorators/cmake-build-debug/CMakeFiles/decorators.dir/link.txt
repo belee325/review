@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/decorators.dir/main.cpp.o  -o decorators.exe -Wl,--out-implib,libdecorators.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
