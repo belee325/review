@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Bummy/Desktop/study/review/c++things/interpreter/main.cpp
+iostream
+-
+string
+-
+vector
+-
+memory
+-
+sstream
+-
+exception
+-
+boost/lexical_cast.hpp
+-
+

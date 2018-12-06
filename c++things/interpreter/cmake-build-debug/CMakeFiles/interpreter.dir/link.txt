@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/interpreter.dir/main.cpp.o  -o interpreter.exe -Wl,--out-implib,libinterpreter.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
