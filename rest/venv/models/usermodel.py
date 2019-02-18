@@ -1,6 +1,13 @@
 import sqlite3
+from db import db
 
-class UserModel:
+
+class UserModel(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80))
+    password = db.Column(db.String(80))
+
     def __init__(self, _id, username, password):
         self.id = _id
         self.username = username
@@ -8,28 +15,12 @@ class UserModel:
 
     @classmethod
     def find_by_username(cls, username):
-        connection = sqlite3.connect('data.db')
-        cursor = connection.cursor()
-        query = 'SELECT * FROM users WHERE username=?'
-        res = cursor.execute(query, (username,))
-        row = res.fetchone()
-        if row:
-            user = cls(*row)
-        else:
-            user = None
-        connection.close()
-        return user
+        return db.query.filter_by(username=username).first()
 
     @classmethod
     def find_by_id(cls, id):
-        connection = sqlite3.connect('data.db')
-        cursor = connection.cursor()
-        query = 'SELECT * FROM users WHERE id=?'
-        res = cursor.execute(query, (id,))
-        row = res.fetchone()
-        if row:
-            user = cls(*row)
-        else:
-            user = None
-        connection.close()
-        return user
+        return db.query.filter_by(id=id).first()
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
