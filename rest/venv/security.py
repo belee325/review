@@ -1,4 +1,4 @@
-from models.usermodel import UserModel
+from models.user_model import UserModel
 from werkzeug.security import safe_str_cmp
 
 def authenticate(username, password):
